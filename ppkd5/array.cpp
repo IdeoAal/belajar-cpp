@@ -28,13 +28,13 @@ int main(){
     string name;
     int entranceFee;
 
-
     cout << "Welcome to the book store!" << endl;
     cout << "Are you a member? (1=yes/0=no): ";
     cin >> isMember;
     if (isMember){
-        cout << "Enter Member ID (0-4): ";
+        cout << "Enter Member ID (1-5): ";
         cin >> memberID;
+        memberID -= 1;
 
         name = member[memberID];
         entranceFee = 0;
@@ -47,4 +47,18 @@ int main(){
     string title [5] = {"Harry Potter", "Algorithm", "Calculus", "Sherlock Holmes", "Supernova"};
     string price [5] = {"250000", "85000", "130000", "270000", "180000"};
     bool available [5] = {true, true, false, true, true};
+    int bookID;
+
+    cout << "Below are available books" << endl;
+    for (bookID= 0; bookID <=4 ; bookID++){
+        if (available[bookID] == false)
+            continue;
+        cout << "Book ID: " << bookID << ", Title: " << title[bookID] << ", Price: " << price[bookID] << endl;
+    }
+
+    cout << "Enter Book ID to buy: ";
+    cin >> bookID;
+
+    cout << "Thank you for buying " << title[bookID] << " for " << price[bookID] << " Rupiah" << endl;
+
 }
