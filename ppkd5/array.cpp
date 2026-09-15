@@ -113,4 +113,17 @@ int main(){
 
     // kita tampilkan judul buku yang dibeli user dan total harga yang harus dibayar user
     cout << "Your selected book is " << title[bookID] << ", with total price of " << total << " Rupiah" << endl;
+
+    // Activity 5 
+    string letters [2] [4] ={
+        {"A", "B", "C", "D"},
+        {"E", "F", "G", "H"}
+    };
+    for (int i = 0; i < 2; i++){
+        for (int j = 0; j < 4; j++){
+            cout << letters[i][j] << "\t";
+        }
+        cout << endl;
+    }
+
 }
