@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include <string>
 using namespace std;
 
@@ -14,6 +16,7 @@ void PlayerStatus(Player player){
 }
 
 void Welcome(){
+    
     cout << "======\t Selamat datang di game petualangan!\t ======" << endl;
     cout << "Kamu akan memulai petualanganmu dengan 3 nyawa dan 0 poin." << endl;
     cout << "Setiap perjalanan yang berhasil, kamu akan mendapatkan 10 poin." << endl;
@@ -26,42 +29,66 @@ int main(){
     player1.nyawa = 3;
     player1.poin = 0;
 
-
     Welcome();
+
     cout << "Masukkan nama pemain: ";
     cin >> player1.nama;
-    
-    int langkah = 0;
+
     srand(time(0));
-    while (player1.nyawa > 0){
-        cout << "Pilih Jalanmu" << endl;
-        cout << "1. Kanan" << endl;
-        cout << "2. Kiri" << endl;
-        int jalan;
-        cout << "Pilihan : ";
-        cin >> jalan;
-        langkah++;
 
-        int random = rand() % 100 + 1; 
+    char mainLagi = 'y';
 
-        if (random <= 30) {
-            system("cls");
-            cout << "Level-" << langkah << endl;
-            cout << "Kamu Bertemmu monster! Kamu kehilangan 1 nyawa." << endl;
-            player1.nyawa -= 1;
-            PlayerStatus(player1);
-        } else {
-            system("cls");
-            cout << "Level-" << langkah << endl;
-            cout << "Perjalananmu aman" << endl;
-            player1.poin += 10;
-            PlayerStatus(player1);
+    while (mainLagi == 'y') {
+        cout << "\nMulai permainan baru!" << endl;
+        player1.nyawa = 3;
+        player1.poin = 0;
+
+        int langkah = 0;
+
+        while (player1.nyawa > 0){
+            cout << "Pilih Jalanmu" << endl;
+            cout << "1. Kanan" << endl;
+            cout << "2. Kiri" << endl;
+
+            int jalan;
+            cout << "Pilihan : ";
+            cin >> jalan;
+
+            langkah++;
+
+            int random = rand() % 100 + 1;
+
+            if (random <= 30) {
+                system("cls");
+
+                cout << "Level-" << langkah << endl;
+                cout << "Kamu bertemu monster! Kamu kehilangan 1 nyawa." << endl;
+
+                player1.nyawa -= 1;
+
+                PlayerStatus(player1);
+            } 
+            else {
+                system("cls");
+
+                cout << "Level-" << langkah << endl;
+                cout << "Perjalananmu aman" << endl;
+
+                player1.poin += 10;
+
+                PlayerStatus(player1);
+            }
         }
-    }
-    cout << "Permainan berakhir!" << endl;
-    cout << "Nama Pemain: " << player1.nama << endl;
-    cout << "Poin Akhir: " << player1.poin << endl;  
 
-    cin.get();
+        cout << "\nPermainan berakhir!" << endl;
+        cout << "Nama Pemain: " << player1.nama << endl;
+        cout << "Poin Akhir: " << player1.poin << endl;
+
+        cout << "\nMain lagi? (y/n): ";
+        cin >> mainLagi;
+    }
+
+    cout << "\nTerima kasih sudah bermain!" << endl;
+
     return 0;
 }
