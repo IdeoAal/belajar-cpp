@@ -12,7 +12,6 @@ string binerKeDesimal(string biner) {
         }
         pangkat++;
     }
-
     return to_string(desimal);
 }
 
@@ -22,12 +21,10 @@ string desimalKeBiner(int desimal) {
     if (desimal == 0) {
         return "0";
     }
-
     while (desimal > 0) {
         biner = to_string(desimal % 2) + biner;
         desimal /= 2;
     }
-
     return biner;
 }
 
