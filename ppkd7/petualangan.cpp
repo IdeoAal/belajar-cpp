@@ -4,19 +4,21 @@
 #include <string>
 using namespace std;
 
+// disini kami menyimpan untuk status pemain, seperti nama, nyawa, dan poin
 struct Player{
     string nama;
     int nyawa;
     int poin;
 };
 
+// fungsi void ini digunakan untuk menampilkan status pemain
 void PlayerStatus(Player player){
     cout << "Sisa Nyawa: " << player.nyawa << endl;
     cout << "Poin Terkumpul: " << player.poin << endl;
 }
 
+// fungsi void untuk dipanggil ketika permainan dimulai, berisi penjelasan singkat tentang permainan
 void Welcome(){
-    
     cout << "======\t Selamat datang di game petualangan!\t ======" << endl;
     cout << "Kamu akan memulai petualanganmu dengan 3 nyawa dan 0 poin." << endl;
     cout << "Setiap perjalanan yang berhasil, kamu akan mendapatkan 10 poin." << endl;
@@ -25,13 +27,17 @@ void Welcome(){
 }
 
 int main(){
+    // dari struct Player, kita membuat objek player1 untuk menyimpan data pemain
     Player player1;
     player1.nyawa = 3;
     player1.poin = 0;
 
+    // untuk awal game kita panggil fungsi welcome yang berisi penjelasan singkat tentang permainan
     Welcome();
 
+    // disini kita meminta pemain untuk memasukkan nama mereka
     cout << "Masukkan nama pemain: ";
+    // nama pemain akan disimpan di player1.nama yang tadi dibuat dari struct player
     cin >> player1.nama;
 
     srand(time(0));
