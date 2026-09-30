@@ -42,7 +42,14 @@ int main(){
 
     srand(time(0));
 
+    /*disini kita meminta pemain untuk memutuskan apakah mereka ingin bermain lagi atau tidak
+    akan tetapi agar saat pertamakali dimulai langsung bisa main, 
+    kita set 'y' agas masuk ke loop whilenya langsung
+    */
     char mainLagi = 'y';
+
+    // while disini menggunakan mainLagi sebagai kondisi, 
+    // jika pemain memasukan 'y' maka akan masuk ke loop while dan memulai permainan baru
 
     while (mainLagi == 'y') {
         cout << "\nMulai permainan baru!" << endl;
@@ -94,6 +101,8 @@ int main(){
         cin >> mainLagi;
     }
 
+    // disini setelah pemain memasukan n, maka akan keluar dari loop while
+    // dan menampilkan pesan terima kasih sudah bermain
     cout << "\nTerima kasih sudah bermain!" << endl;
 
     return 0;
