@@ -56,4 +56,5 @@ int main() {
         cout << "Apakah ingin melakukan konversi lagi? (0:no/1:yes): ";
         cin >> konversiLagi;
     }
+    cout << "Terima kasih telah menggunakan program konversi bilangan." << endl;
 }
