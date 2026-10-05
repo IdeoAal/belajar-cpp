@@ -6,7 +6,7 @@ int pangkat (int a, int b){
     if (b > 0){
         return hasil = a * pangkat(a, b - 1);
     } else {
-        return hasil;
+        return 1;
     }
 }
 
