@@ -17,12 +17,22 @@ int main(){
     //     }cout << endl;
     // }
 
-    for (int i = 0; i< 5; i++){
-        for (int j = 0; j < 5; j++){
-            if (i + j >= 4){
-                cout << "*";
-            }else 
-            {cout << " ";}
-        }cout << endl;
+//     for (int i = 0; i< 5; i++){
+//         for (int j = 0; j < 5; j++){
+//             if (i + j <= 4){
+//                 cout << "*";
+//             }else 
+//             {cout << " ";}
+//         }cout << endl;
+//     }
+
+    int baris;
+    cout << "Berapa baris?: ";
+    cin >> baris;
+    for (int i = 1; i <= baris; i++){
+        for (int j = 1; j <= i; j++){
+            cout << j << "\t";
+        }
+        cout << endl;
     }
 }
