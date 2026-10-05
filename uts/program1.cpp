@@ -22,18 +22,26 @@ int main() {
     //     }
     // }
 
-    int tahun;
+    // int tahun;
     
-    cout << "Masukkan tahun: ";
-    cin >> tahun;
+    // cout << "Masukkan tahun: ";
+    // cin >> tahun;
 
-    if (tahun%400 == 0){
-        cout << "Tahun " << tahun << " adalah tahun kabisat" << endl;
-    } else if (tahun % 100 ==0){
-        cout << "Tahun " << tahun << " bukan tahun kabisat" << endl;
-    } else if (tahun % 4 == 0){
-        cout << "Tahun " << tahun << " adalah tahun kabisat" << endl;
-    } else {
-        cout << "Tahun " << tahun << " bukan tahun kabisat" << endl;
+    // if (tahun%400 == 0){
+    //     cout << "Tahun " << tahun << " adalah tahun kabisat" << endl;
+    // } else if (tahun % 100 ==0){
+    //     cout << "Tahun " << tahun << " bukan tahun kabisat" << endl;
+    // } else if (tahun % 4 == 0){
+    //     cout << "Tahun " << tahun << " adalah tahun kabisat" << endl;
+    // } else {
+    //     cout << "Tahun " << tahun << " bukan tahun kabisat" << endl;
+    // }
+
+    int n, faktorial= 1;
+    cout << "Enter a positive integer n: ";
+    cin >> n;
+    for (int i = 1; i <= n; i++) {
+        faktorial *= i;
     }
+    cout << "The factorial of " << n << " is: " << faktorial << endl;
 }
